@@ -10,16 +10,7 @@ export const handleError = err => {
     throw err
 }
 
-export const Get = url => {
-    return axios
-        .get(baseURL + url)
-        .then(resp => {
-            return resp
-        })
-        .catch(error => {
-            handleError(error)
-        })
-}
+
 
 export const Get = async url => {
     try {
