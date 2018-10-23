@@ -1,7 +1,7 @@
 import { Login } from "./actions";
 
 const defaultState={
-    login:''
+    login:[]
 }
 
 export default (state =defaultState,action) => {
@@ -9,7 +9,7 @@ export default (state =defaultState,action) => {
         case Login.getLoginSucess:
           return {
               ...state,
-            login:action.data.value
+            login:action.data
           }
         default:
          return state;

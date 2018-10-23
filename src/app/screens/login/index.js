@@ -4,12 +4,10 @@ import {getLogin} from "../../redux/login/actions";
 
 
 class LoginForm extends React.Component {
-    constructor(props){
-        super(props)
-    }
+  
 
    componentDidMount(){
-      //this.props.getLogin();
+      this.props.getLogin();
    }
 
    render(){
@@ -20,16 +18,19 @@ class LoginForm extends React.Component {
        )
    }
 }
-const mapStateToProps = state => {
+
+const mapDispatchToProps = (dispatch)  => {
+    return {
+        getLogin: () => dispatch(getLogin())
+    }
+}
+
+
+const mapStateToProps = (state) => {
     return {
         login:state.loginState.login
     }
 }
 
-const mapDispatchToProps = dispatch  => {
-    return {
-        getLogin: () => dispatch(getLogin())
-    }
-}
 
 export default connect(mapStateToProps,mapDispatchToProps)(LoginForm)
