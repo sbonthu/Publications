@@ -1,16 +1,11 @@
-import React, { Component } from 'react';
-import '../css/style.css';
-
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <h1>Login</h1>
-        </header>
-      </div>
-    );
-  }
-}
+import React from 'react';
+import { Provider } from 'react-redux';
+import store from "../app/store"; 
+import  LoginForm from "../app/screens/login"
+const App = () =>(
+<Provider store ={store}>
+    <LoginForm />
+</Provider>
+)
 
 export default App;
