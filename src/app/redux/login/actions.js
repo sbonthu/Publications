@@ -12,11 +12,11 @@ export const getLoginSucess = data => {
     };
 };
 
-export function getLogin() {
+export function getLogin(dispatch) {
     return (dispatch, getState) => {
         Get(API.users)
             .then(resp => {
-                dispatch(getLoginSucess(resp.data[0]));
+                dispatch(getLoginSucess(resp.data));
             })
             .catch(err => {
                 console.log(err);
